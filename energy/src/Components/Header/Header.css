@@ -1,0 +1,142 @@
+/* Header Section */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f2f2f2;
+  position: relative;
+}
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.image-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  color: var(--white-color);
+  text-align: center;
+  transition: transform 0.3s ease;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+.image-text > p:nth-child(1) {
+  font-size: 2.1rem;
+  font-weight: 600;
+}
+.image-text > p:nth-child(2) {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--white-color);
+}
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 5rem;
+  margin-top: 20px;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.previous-button {
+  position: absolute;
+  left: 3px;
+}
+.next-button {
+  position: absolute;
+  right: 7px;
+}
+.button:hover {
+  background-color: #555;
+}
+.lazy-image-container {
+  position: relative;
+  height: 100%;
+}
+
+.lazy-image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  z-index: 10;
+  cursor: pointer;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  /* Set the desired height */
+  font-size: 0;
+  height: 90px !important;
+  background-color: #33333370;
+  color: white !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 24px !important;
+}
+.btn-heading {
+  margin-top: 10px;
+}
+.btn-heading > button {
+  background-color: transparent;
+  border: 1px solid white;
+  text-align: center !important;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.7s all ease;
+  font-size: 1.1rem;
+}
+.btn-heading > button:hover {
+  transform: scale(1.1);
+  background-color: #33333370;
+  transition: 0.7s all ease;
+}
+@media screen and (max-width: 992px) {
+  .image-text {
+    width: 90%;
+  }
+  .image-text > p:nth-child(1) {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .image-text > p:nth-child(2) {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+@media screen and (max-width: 768px) {
+  .image-text > p:nth-child(1) {
+    font-size: 1.4rem;
+    font-weight: 600;
+  }
+  .image-text > p:nth-child(2) {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
+  .header {
+    height: 67vh;
+  }
+}

@@ -1,0 +1,144 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,400&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Roboto Condensed", sans-serif;
+}
+body {
+  overflow-x: hidden;
+}
+:root {
+  --white-color: white;
+  --black-color: black;
+  --link_color: #8fd4e1;
+  --primary-color: #151515;
+  --gray-color: #8b8b8b;
+  --secondry-color: #131313;
+}
+
+.loader-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(18, 18, 18);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+
+.loader div {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: black;
+  float: left;
+  margin: 0 3px;
+  background: white;
+  transform: scale(0);
+}
+.loader .ball1 {
+  z-index: 1;
+  animation: grow 4.4s infinite ease-in-out;
+}
+.loader .ball2 {
+  animation: grow 4.4s infinite ease-in-out;
+  animation-delay: 0.3s;
+}
+.loader .ball3 {
+  animation: grow 4.4s infinite ease-in-out;
+  animation-delay: 0.6s;
+}
+.loader .ball4 {
+  animation: grow 4.4s infinite ease-in-out;
+  animation-delay: 0.9s;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(0);
+  }
+  25% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0);
+  }
+  75% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+.content-container {
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.content-container.show {
+  opacity: 1;
+}
+.contain {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+.Link_to {
+  font-weight: lighter;
+  color: gray;
+  transition: color 0.5s ease;
+}
+.Link_to:hover {
+  color: var(--link_color);
+}
+.eco_text {
+  color: white;
+  font-weight: lighter;
+}
+.eco_text > p:nth-child(1) {
+  font-size: 2.3rem;
+}
+.eco_contain {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+.link_eco {
+  color: white;
+  transition: color 0.5s ease;
+}
+.link_eco:hover {
+  color: var(--link_color);
+}
+.eco_text > p:nth-child(2) {
+  font-size: 0.9rem;
+  color: var(--white-color);
+  margin-top: 10px;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
